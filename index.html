@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dog List</title>
+    </head>
+    <body>
+        <img id="dog" height="500" width="500"></img>
+
+
+
+        <script>
+
+            fetch('https://dog.ceo/api/breed/affenpinscher/images/random')
+            .then(res => res.json()).then(res1 => {
+                
+                console.log("Breed List",res1.message);
+                document.getElementById('dog').src = res1.message;
+            }).catch(error => {
+                console.log(error)
+            })
+        </script>
+    </body>
+</html>
