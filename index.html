@@ -4,9 +4,16 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Dog List</title>
+
+        <style>
+            ul,ol{
+                list-style: none;
+            }
+        </style>
     </head>
     <body>
-        <h1 id="dogname"></h1>
+        <h1 align="center">Breed List</h1>
+        <ul id="dogname" align="center"></ul>
 
 
         <script>
@@ -17,9 +24,7 @@
                 console.log("Breed List",res1);
                 for (const key in res1.message){
                     console.log("Key", key);
-                    document.getElementById('dogname').innerHTML = key.forEach(elem => {
-                        
-                    });;   
+                    document.getElementById('dogname').innerHTML += `<li>${key}</li>`;
                 }
             }).catch(error => {
                 console.log(error)
